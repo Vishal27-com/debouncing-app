@@ -27,7 +27,6 @@ function App() {
       return (...args)=>{
           ref.current && clearTimeout(ref.current)
           ref.current=setTimeout(()=>{
-              console.log("hello")
               cb.apply(this,args)
           },delay)
       
