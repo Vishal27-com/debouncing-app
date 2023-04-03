@@ -15,9 +15,13 @@ function App() {
       res()
   }
   const movieApi=async ()=>{
+    try {
       let res=await fetch(`http://www.omdbapi.com/?apikey=1129ba30&s=${text}`)
       let data=await res.json()
       setMovies(data.Search)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
   const debouncing=(cb,delay)=>{
       return (...args)=>{
